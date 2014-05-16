@@ -34,6 +34,7 @@ public class TestUI extends Application {
         final Scene scene1 = new Scene(root1, 300, 250);
         final Scene scene2 = new Scene(root2, 300, 250);
         final Scene scene3 = new Scene(root3, 300, 250);
+        scene2.addEventHandler(KeyEvent.KEY_PRESSED, Engine.keyEventHandler);
         
         Label GameTitle = new Label("3072");
         GameTitle.setFont(new Font("Arial", 30));
@@ -90,6 +91,7 @@ public class TestUI extends Application {
             public void handle(ActionEvent event) {
             	Engine.GetRandomPosition();
                 fillGrid(grid, Engine.map);
+                grid.requestFocus();
             }
         });
         
